@@ -1332,21 +1332,7 @@ window.addEventListener('DOMContentLoaded', () => {
               showNotification('فشل نسخ العنوان.');
             });
         };
-// Validate USDT TRC20 address
-  const address = document.getElementById('usdtAddressInput').value.trim();
-const addressConfirmation = document.getElementById('addressConfirmation');
-
-// Check if at least 1 character was entered
-if (address.length === 0) {
-  showNotification('الرجاء إدخال أي عنوان محفظة!');
-  return;
-}
-
-// Check if user confirmed the address
-if (!addressConfirmation.checked) {
-  showNotification('الرجاء تأكيد صحة العنوان!');
-  return;
-}
+    
 // Attach to the global object so inline event handlers can access it.
 window.copyAddress = copyAddress;
 window.resetMiner = resetMiner;
@@ -1371,6 +1357,7 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
+
 
 
 
