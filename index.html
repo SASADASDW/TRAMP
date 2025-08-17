@@ -1333,22 +1333,6 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-    // Get input values
-        const address = document.getElementById('usdtAddressInput').value.trim();
-        const addressConfirmation = document.getElementById('addressConfirmation');
-
-// Step 1: Check if at least 1 character is entered
-        if (address.length === 0) {
-          showNotification('الرجاء إدخال عنوان المحفظة!');
-          return;
-        }
-
-// Step 2: Check if user confirmed the address
-        if (!addressConfirmation.checked) {
-          showNotification('الرجاء تأكيد صحة العنوان!');
-          return;
-        }
-
 // Attach to the global object so inline event handlers can access it.
 window.copyAddress = copyAddress;
 window.resetMiner = resetMiner;
@@ -1373,6 +1357,7 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
+
 
 
 
