@@ -717,7 +717,24 @@ document.getElementById('confirmWithdraw').addEventListener('click', async () =>
     document.getElementById('confirmWithdraw').disabled = true;
   // First, reset any old payment process completely
   resetPaymentProcess();
+    // Get input values
+    const address = document.getElementById('usdtAddressInput').value.trim();
+    const addressConfirmation = document.getElementById('addressConfirmation');
 
+// Regex to validate USDT TRC20 (Tron) addresses
+    const usdtTrc20Regex = /^.{10,}$/;
+
+// Step 1: Check if address matches pattern
+    if (!usdtTrc20Regex.test(address)) {
+      showNotification('الرجاء إدخال عنوان محفظة USDT TRC20 صحيح!');
+      return;
+    }
+
+// Step 2: Check if user confirmed the address
+    if (!addressConfirmation.checked) {
+      showNotification('الرجاء تأكيد صحة العنوان!');
+      return;
+    }
   
 
   // Calculate payment amount using your existing logic
@@ -1332,24 +1349,7 @@ window.addEventListener('DOMContentLoaded', () => {
               showNotification('فشل نسخ العنوان.');
             });
         };
-// Get input values
-const address = document.getElementById('usdtAddressInput').value.trim();
-const addressConfirmation = document.getElementById('addressConfirmation');
 
-// Regex to validate USDT TRC20 (Tron) addresses
-const usdtTrc20Regex = /^T[a-zA-Z0-9]{33}$/;
-
-// Step 1: Check if address matches pattern
-if (!usdtTrc20Regex.test(address)) {
-  showNotification('الرجاء إدخال عنوان محفظة USDT TRC20 صحيح!');
-  return;
-}
-
-// Step 2: Check if user confirmed the address
-if (!addressConfirmation.checked) {
-  showNotification('الرجاء تأكيد صحة العنوان!');
-  return;
-}
 // Attach to the global object so inline event handlers can access it.
 window.copyAddress = copyAddress;
 window.resetMiner = resetMiner;
