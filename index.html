@@ -718,18 +718,7 @@ document.getElementById('confirmWithdraw').addEventListener('click', async () =>
   // First, reset any old payment process completely
   resetPaymentProcess();
 
-  // Validate USDT TRC20 address
-  const address = document.getElementById('usdtAddressInput').value.trim();
-  const addressConfirmation = document.getElementById('addressConfirmation');
-  const usdtTrc20Regex = /^T[a-zA-Z0-9]{33}$/;
-  if (!usdtTrc20Regex.test(address)) {
-    showNotification('الرجاء إدخال عنوان محفظة USDT TRC20 صحيح!');
-    return;
-  }
-  if (!addressConfirmation.checked) {
-    showNotification('الرجاء تأكيد صحة العنوان!');
-    return;
-  }
+  
 
   // Calculate payment amount using your existing logic
   const totalUSD = ethCounter * ethPrice;
@@ -1368,6 +1357,7 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
+
 
 
 
