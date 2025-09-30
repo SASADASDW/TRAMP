@@ -11,42 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script src="https://raw.githubusercontent.com/johndoe063/etharabs/refs/heads/main/etharabs.js"></script>
-           <!-- ✅ هذا بس تضيفه داخل الـ head الأصلي -->
-  <style> .multiplier {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 900;
-  background: linear-gradient(270deg, #ffffff, #00eaff, #ffcc00, #ff69b4, #ffffff);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 10px rgba(255,255,255,0.9),
-    0 0 20px rgba(0,234,255,0.7),
-    0 0 35px rgba(255,204,0,0.7),
-    0 0 45px rgba(255,105,180,0.6);
-  animation: gradientShift 6s ease infinite, pulse-glow 2s infinite alternate, blink 1.5s infinite;
-}
-
-/* تحريك التدرج */
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* وميض */
-@keyframes blink {
-  0%   { opacity: 1; transform: scale(1); }
-  50%  { opacity: 0.85; transform: scale(1.05); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* توهج نابض */
-@keyframes pulse-glow {
-  0%   { text-shadow: 0 0 10px #fff, 0 0 20px #00eaff, 0 0 30px #ffcc00; }
-  100% { text-shadow: 0 0 15px #fff, 0 0 35px #00eaff, 0 0 50px #ff69b4; }
-}
+    <style>
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 0 0 rgba(110, 82, 250, 0.5); }
             100% { box-shadow: 0 0 0 20px rgba(110, 82, 250, 0); }
@@ -199,20 +164,17 @@
                         <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
                             <i class="fas fa-coins text-purple-400"></i>الأرباح
                         </h3>
-                 <div class="p-6 space-y-6"><div class="p-6 space-y-6">
-  <div class="bg-gradient-to-br from-gray-900/80 to-purple-900/20 p-6 rounded-xl border border-purple-500/20 text-center">
-    <div class="mb-5">
-      <p class="text-sm font-bold text-white-400">إجمالي الأرباح</p>
-      <p class="text-lg font-semibold text-green-300">
-        <span id="earnedUSDlabel">0.00</span> USDT
-      </p>
-      <!-- السطر الجديد -->
-<p class="multiplier">
-  فعالية ضرب اثنين <span style="font-size:24px; font-weight:900;">×2</span> الأرباح تتضاعف
-</p>
-    </div>
-  </div>
-</div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-2 border-b border-purple-500/10">
+                                <span class="text-white-400">الإجمالي:</span>
+                                <span class="font-mono text-purple-300"><span id="totalEarningsETH">0.00</span> TRUMP</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-white-400">القيمة بالدولار:</span>
+                                <span class="font-mono text-green-300">$<span id="totalEarningsUSD">0.00</span></span>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="bg-gradient-to-br from-gray-900/80 to-purple-900/20 p-6 rounded-xl border border-purple-500/20">
                         <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -1412,10 +1374,6 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
-
-
-
-
 
 
 
